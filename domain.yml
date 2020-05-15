@@ -1,0 +1,35 @@
+intents:
+  - greet
+  - goodbye
+  - thank
+  - inform
+
+entities:
+  - number
+
+actions:  
+  - action_welcome_message
+  - action_main_menu_message
+  - action_menu_option_message
+
+slots:
+  number:
+    type: custom_slot.MenuOptionSlot  
+
+###########################################################
+## TODO: Experiment with response selector for menu options
+###########################################################
+
+responses:
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_you_got_it:
+  - text: "You are welcome"
+
+  utter_sorry:
+  - text: "Sorry, I did not get that"
+  
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false
